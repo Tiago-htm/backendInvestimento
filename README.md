@@ -7,7 +7,9 @@
 
     Após a instalação, crie um banco chamado Investimento.
 
-    Crie uma tabela contendo os seguintes parâmetros: id, nome, tipo_investimento e valor_investimento.
+    Utilize o comando abaixo para criação da tabela:
+      CREATE TYPE tipo_investimento AS ENUM ('Ação','Fundo Imobiliário','Fundo de Renda Fixa','Tesouro Direto','CDB','Outro');CREATE TABLE investimento (id SERIAL PRIMARY KEY,nome VARCHAR(100) NOT NULL,tipo tipo_investimento NOT             NULL,valor_investido NUMERIC(15, 2) NOT NULL,CONSTRAINT checar_valor CHECK (valor_investido > 0),data_investimento DATE NOT NULL,CONSTRAINT checar_data CHECK (data_investimento <= CURRENT_DATE));
+     
     
 ### 2° Passo: Clone o Repositório:
     - Execute no terminal o comando (git clone  https://github.com/Tiago-htm/backendInvestimento.git) no seu computador
